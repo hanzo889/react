@@ -1,9 +1,10 @@
-import Background from "./calm.webp"
 
-export default function Image(){
-    return(
-        <div className="img-v">
-            <img className="img" src={Background} alt="background" />
-        </div>
-    )
+interface ImageProps  {
+  src: string;
+  className?: string;
+}
+
+
+export default function Image({ className, src, ...props}: ImageProps) {
+  return <img className={className} src={src} {...props} />;
 }
