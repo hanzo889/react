@@ -72,7 +72,6 @@ export function CarouselNext({ children, className }: navBaseProps) {
   const isDisabled = current === total - 1;
   const buttonClass = ["carousel-nav", className].filter(Boolean).join(" ");
   const OnClick = () => {
-    console.log("current-nav-next",current);
     next()
   };
   return (

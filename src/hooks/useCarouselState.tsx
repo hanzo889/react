@@ -28,7 +28,7 @@ export function useCarouselState({
     goTo(current - 1);
   };
   const next = () => {
-    goTo(current - 1);
+    goTo(current + 1);
   };
   return {
     current,

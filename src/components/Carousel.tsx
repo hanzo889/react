@@ -49,8 +49,6 @@ export default function Carousel({
     total: total,
     onIndexChange: onIndexChange,
   });
-  console.log("current",current);
-  
   useCarouselTransform({ current, slideVisible, trackRef, transition });
   const rootClass = ["carousel-root", className].filter(Boolean).join(" ");
   

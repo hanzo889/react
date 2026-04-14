@@ -3,10 +3,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 :root {
   --carousel-transition: 420ms cubic-bezier(0.4, 0, 0.2, 1);
   --carousel-radius: 12px;
 }
+/* body{
+  overflow-x: hidden;
+
+} */
 ul,
 li {
   list-style: none;
@@ -150,7 +155,13 @@ a {
   border: none;
   border-radius: 40px;
   color: white;
-  background-color: rgb(26, 62, 111);
+  background: linear-gradient(rgb(36, 119, 170) 0%, rgb(100, 97, 224) 100%);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.button-image-l:hover {
+  background: blue;
 }
 .button-image-r {
   width: 335px;
@@ -159,6 +170,11 @@ a {
   border-radius: 40px;
   background-color: rgb(255, 255, 255);
   border: 2px solid gray;
+  cursor: pointer;
+  transition: 0.3s ease-out;
+}
+.button-image-r:hover {
+  background-color: lightgrey;
 }
 .help-you {
   /* transform: translate(0%, 170%); */
@@ -374,35 +390,44 @@ a {
   color: inherit;
   /* cursor: pointer; */
 }
+.container-review {
+  margin-top: 60px;
+}
 .carousel-root {
   display: flex;
   flex-direction: column;
   position: relative;
-  width: 100%;
+  
   overflow: hidden;
   /* background-color: red; */
   padding: 0px 136px;
   /* height: 100%; */
   min-height: 550px;
   /* max-width: 1600px; */
+  max-width: 1200px;
 }
 .carousel-track {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  width: 100%;
+  display: flex;
+  /* flex-direction: column; */
   height: 100%;
+  /* background-color: red; */
+  flex-wrap: nowrap;
   transition: transform var(--carousel-transition);
   border-radius: var(--carousel-radius);
-  overflow: hidden;
+  /* overflow: hidden; */
   gap: 3rem;
+  flex-grow: 1;
+  
 }
 .carousel-item {
-  flex: 0 0 100%;
+  
   /* width: 100%; */
   height: 100%;
   min-width: 0;
   overflow: hidden;
   text-align: left;
+   flex-shrink: 0;
+  flex-grow: 1;
 }
 .carousel-item[data-slide-visible="2"] {
   flex: 0 0 50%;
@@ -431,12 +456,13 @@ a {
   padding: 40px 32px;
   text-align: left;
   gap: 20px;
-  /* text-align: left; */
+ 
 }
 .review {
   line-height: 1.5;
   font-size: 22.5px;
   font-weight: 500;
+  
 }
 .reviewer {
   margin-top: 10px;
@@ -455,13 +481,15 @@ a {
   background-color: gray;
   width: 40px;
   height: 40px;
+  cursor: pointer;
 }
+
 .chevron-icon {
   stroke: white;
   display: flex;
   align-self: center;
   justify-self: center;
 }
-.carousel-nav:disabled{
-  opacity: 0.50;
+.carousel-nav:disabled {
+  opacity: 0.5;
 }
